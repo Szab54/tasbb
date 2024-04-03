@@ -1,6 +1,4 @@
 from flask import Flask
-import requests
-
 # Flask alkalmazás létrehozása
 app = Flask(__name__)
 
@@ -16,6 +14,4 @@ def about():
 
 # Főprogram: Flask alkalmazás indítása
 if __name__ == '__main__':
-    public_ip = requests.get('https://api.ipify.org').text
-    print(f"Public IP Address: {public_ip}")
-    app.run(host=public_ip, port=8880)
+    app.run(host="0.0.0.0", port=8880)
